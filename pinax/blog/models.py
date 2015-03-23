@@ -7,12 +7,14 @@ except ImportError:
 
 from django.core.exceptions import ImproperlyConfigured
 from django.db import models
-from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.utils import timezone
 from django.utils.html import strip_tags
 
 from django.contrib.sites.models import Site
+
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 try:
     import twitter
